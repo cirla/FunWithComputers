@@ -1,0 +1,19 @@
+title: Fun With Computers
+email: tim@timcheeseman.com
+description: >-
+  Fun With Computers
+baseurl: "/funwithcomputers"
+url: "http://timcheeseman.com"
+github_url: "http://github.com/cirla/funwithcomputers"
+github_username:  cirla
+
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+encoding: utf-8
+sass:
+    style: :compressed
+timezone: America/New_York
+
