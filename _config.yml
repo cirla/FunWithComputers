@@ -1,11 +1,16 @@
 title: Fun With Computers
-email: tim@timcheeseman.com
 description: >-
-  Fun With Computers
-baseurl: "/funwithcomputers"
+  Computers can be incredibly useful and incredibly silly.
+  If we're lucky, this happens simultaneously.
 url: "http://timcheeseman.com"
+baseurl: "/funwithcomputers"
 github_url: "http://github.com/cirla/funwithcomputers"
+
+author: Tim Cheeseman
+email: tim@timcheeseman.com
 github_username:  cirla
+twitter_username: tim_cheeseman
+google_analytics: UA-60152626-4
 
 markdown: kramdown
 theme: minima

@@ -1,8 +1,7 @@
 ---
 layout: post
-title:  "Do Androids Dream of Electric Blue?"
-date:   2017-12-21 15:42:49 -0500
-#categories: python
+title:  Do Androids Dream of Electric Blue?
+date:   2017-12-21 20:00:00 -0500
 ---
 
 Paint colors always have such fanciful names like "Flamingo's Dream" and "Agreeable Gray".
@@ -68,26 +67,9 @@ len(benjamin_moore_colors)
 benjamin_moore_colors.sample()
 ```
 
-<div>
-<table>
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>family</th>
-      <th>rgb</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>3378</th>
-      <td>WORN LEATHER SHOES</td>
-      <td>NEUTRAL</td>
-      <td>(152, 142, 120)</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|| name | family | rgb |
+|-|-:|-:|-:|
+| **3378** | WORN LEATHER SHOES | NEUTRAL | (152, 142, 120) |
 
 Sherwin Williams is also close, but for some reason the RGB values are given as a single integer.
 
@@ -116,26 +98,9 @@ len(sherwin_williams_colors)
 sherwin_williams_colors.sample()
 ```
 
-<div>
-<table>
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>rgb</th>
-      <th>family</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>190</th>
-      <td>AMBITIOUS AMBER</td>
-      <td>(240, 203, 151)</td>
-      <td>ORANGE</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|| name | family | rgb |
+|-|-:|-:|-:|
+| **190** | AMBITIOUS AMBER | ORANGE | (240, 203, 151) |
 
 Behr is a bit tricky as the data is inside of a JavaScript source file instead of a JSON endpoint.
 Also, the color family data is stored separately from the color information, so we'll have to join the two together.
@@ -208,34 +173,16 @@ len(behr_colors)
 behr_colors.sample()
 ```
 
-<div>
-<table>
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>name</th>
-      <th>family</th>
-      <th>rgb</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1650</th>
-      <td>DRIED CHAMOMILE</td>
-      <td>YELLOW</td>
-      <td>(209, 179, 117)</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+|| name | family | rgb |
+|-|-:|-:|-:|
+| **1650** | DRIED CHAMOMILE | YELLOW | (209, 179, 117) |
 
 Now that they're all in the same format, we can combine them all together.
 
 ```python
 colors = pd.concat([benjamin_moore_colors,
                     sherwin_williams_colors,
-                    behr_colors]
-                  ).drop_duplicates()
+                    behr_colors]).drop_duplicates()
 len(colors)
 ```
 
@@ -1243,15 +1190,15 @@ POS_MAP = {
     'VERB': 'v',
 }
 
-# get synonyms for a spaCy token
 def get_syns(token):
+    """get synonyms for a spaCy token"""
     synsets = wordnet.synsets(token.orth_, pos=POS_MAP.get(token.pos_))
     if synsets:
         return itertools.chain.from_iterable(s.lemma_names() for s in synsets)
     return [token.orth_]
 
-# explode a color name into the product of all of its component words' synonyms
 def explode(color_name):
+    """explode a color name into the product of all of its component words' synonyms"""
     return set(
         ' '.join(variant).replace('_', ' ').upper()
         for variant in itertools.product(
@@ -1328,26 +1275,7 @@ display_colors(new_colors)
   </div>
 </div>
 
-Most of are generated names will be nonsensical (and many also NSFW), but I did come across a few good ones. Here are the highlights:
-
-```python
-display_colors(pd.DataFrame([
-    ('Unprompted Empurpled', 'PURPLE', (110, 50, 129)),
-    ('Million Dollar Marxist', 'RED', (183, 10, 31)),
-    ('Induce Watercourse', 'BLUE', (16, 207, 251)),
-    ('Sharp-worded American Cheddar', 'ORANGE', (231, 118, 22)),
-    ('Summertime Sorry', 'PURPLE', (143, 176, 235)),
-    ('Graeco-roman Chocolate-brown', 'BROWN', (82, 56, 46)),
-    ('Cat Valium', 'GREEN', (91, 254, 226)),
-    ('Unconscionable Orange Tree', 'ORANGE', (196, 67, 18)),
-    ('Unused Butter', 'YELLOW', (240, 210, 153)),
-    ('Scandalmongering Shuttlecock', 'YELLOW', (232, 196, 103)),
-    ('Norse Naughty', 'PURPLE', (93, 4, 242)),
-    ('Disconsolate Denim', 'BLUE', (116, 183, 197)),
-    ('Italian Methamphetamine Green', 'GREEN', (132, 232, 233)),
-    ('Odoriferous & Off-key', 'YELLOW', (215,183,67)),
-], columns=['name', 'family', 'rgb']))
-```
+Most of the generated names will be nonsensical (and many also NSFW), but I did come across a few good ones. Here are the highlights:
 
 <div>
   <div style="width: 128px; display: inline-block">
@@ -1395,7 +1323,7 @@ display_colors(pd.DataFrame([
       <p><svg width="64" height="64" style="background: #f0d299" /></p>
       <p>#f0d299</p>
   </div>
-  <div style="width: 128px; display: inline-block">
+  <div style="width: 148px; display: inline-block">
       <p><div style="font-weight: bold">Scandalmongering Shuttlecock</div>YELLOW</p>
       <p><svg width="64" height="64" style="background: #e8c467" /></p>
       <p>#e8c467</p>
@@ -1410,7 +1338,7 @@ display_colors(pd.DataFrame([
       <p><svg width="64" height="64" style="background: #74b7c5" /></p>
       <p>#74b7c5</p>
   </div>
-  <div style="width: 128px; display: inline-block">
+  <div style="width: 148px; display: inline-block">
       <p><div style="font-weight: bold">Italian Methamphetamine Green</div>GREEN</p>
       <p><svg width="64" height="64" style="background: #84e8e9" /></p>
       <p>#84e8e9</p>
@@ -1426,5 +1354,5 @@ display_colors(pd.DataFrame([
 
 For now it's time to climb back out of the rabbit hole, but maybe one day we can [teach our algorithm about puns](https://arxiv.org/pdf/1704.08224.pdf).
 
-Thanks for humoring me and go have some [fun with computers]({{ site.base_url | prepend: site.url }}).
+Thanks for humoring me and go have some [fun with computers]({{ site.url }}{{ site.baseurl }}/).
 
