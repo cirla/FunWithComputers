@@ -1352,7 +1352,7 @@ Most of the generated names will be nonsensical (and many also NSFW), but I did 
 
 ## Journey's End (#BAC9D6)
 
-For now it's time to climb back out of the rabbit hole, but maybe one day we can [teach our algorithm about puns](https://arxiv.org/pdf/1704.08224.pdf).
+For now it's time to climb back out of the rabbit hole, but maybe one day we can [teach our algorithm about puns](https://arxiv.org/pdf/1704.08224.pdf) (or even just include homophones in addition to synonyms to increase the likelihood of accidental puns).
 
 Thanks for humoring me and go have some [fun with computers]({{ site.url }}{{ site.baseurl }}/).
 
