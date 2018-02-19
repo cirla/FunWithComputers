@@ -1,4 +1,4 @@
 # Fun With Computers
 
-Follow along at [timcheeseman.com/funwithcomputers](http://timcheeseman.com/funwithcomputers).
+Follow along at [timcheeseman.com/funwithcomputers](https://timcheeseman.com/funwithcomputers).
 

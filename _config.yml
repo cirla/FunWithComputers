@@ -3,9 +3,9 @@ description: >-
   Computers can be incredibly useful and incredibly silly.
   If we're lucky, this happens simultaneously.
 
-url: "http://timcheeseman.com"
+url: "https://timcheeseman.com"
 baseurl: "/funwithcomputers"
-github_url: "http://github.com/cirla/funwithcomputers"
+github_url: "https://github.com/cirla/funwithcomputers"
 
 author: Tim Cheeseman
 email: tim@timcheeseman.com
